@@ -4,11 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Contacts Manager</title>
+  <link rel="stylesheet" href="stylesheets/contacts.css" />
   <script src="/javascripts/jquery.js"></script>
   <script src="/javascripts/handlebars.js"></script>
+  <script id="contactTemplate" type="text/x-handlebars">
+    <div id="{{id}}" class="contact">
+      <h3>{{full_name}}</h3>
+      <p><strong>Phone Number:</strong></p>
+      <p>{{phone_number}}</p>
+      <p><strong>Email:</strong></p>
+      <p>{{email}}</p>
+      {{#if tags}}
+      <p><strong>Tags:</strong></p>
+      <p>{{tags}}</p>
+      {{/if}}
+      <button class="edit-button">Edit</button>
+      <button class="delete-button">Delete</button>
+    </div>
+  </script>
+  <script id="formTemplate" type="text/x-handlebars">
+    <form action="" method="post" class="overlay" id="contact-form" data-contactId={{contactId}}>
+      <h2>{{action}} Contact</h2>
+      <fieldset>
+        <label for="name">Full name:</label>
+        <input type="text" name="name" id="name" value="{{full_name}}"/>
+        <br>
+        <label for="email">Email address:</label>
+        <input type="text" name="email" id="email" value="{{email}}"/>
+        <br>
+        <label for="phone">Phone number:</label>
+        <input type="text" name="phone" id="phone" value="{{phone_number}}"/>
+      </fieldset>
+      <fieldset>
+        <div id="tags" name="tags">
+          <p>Tags:</p>
+          <label class="tag" for="work">Work</label>
+          <input type="checkbox" id="work" name="work" {{workChecked}}/>
+          <label class="tag" for="friend">Friend</label>
+          <input type="checkbox" id="friend" name="friend" {{friendChecked}}/>
+          <label class="tag" for="family">Family</label>
+          <input type="checkbox" id="family" name="family" {{familyChecked}}/>
+          <label class="tag" for="other">Other</label>
+          <input type="checkbox" id="other" name="other" {{otherChecked}}/>
+        </div>
+      </fieldset>
+      <input type="submit" value="Submit" id="submit"/> 
+      <input type="submit" value="Cancel" id="cancel"/>
+    </form>
+  </script>
+  <script id="contactsTemplate" type="text/x-handlebars">
+    {{#if contacts}}
+    {{#each contacts}}
+    {{> contactTemplate}}
+    {{/each}}
+    {{else}}
+    <h2>There are no contacts.</h2>
+    <button class="add-contact">Add Contact</button>
+    {{/if}}
+  </script>
+  <script src="/javascripts/app.js"></script>
 </head>
 <body>
-  <p>Hello there!</p>
+  <header>
+    <h1 id="site-title">Contact Manager</h1>
+  </header>
+  <main>
+    <div id="action-bar" class="toggleable">
+      <button class="add-contact">Add Contact</button>
+      <input type="text" id="search-bar" placeholder="Search"/>
+    </div>
+    <div id="contacts" class="toggleable"></div>
+  </main>
 </body>
 </html>

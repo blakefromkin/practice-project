@@ -1,0 +1,66 @@
+body {
+  font-family: sans-serif;
+}
+
+header {
+  background-color: purple;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+#action-bar {
+height: 70px;
+border-color: grey;
+border-style: solid;
+}
+
+
+.add-contact {
+  color: purple;
+  height: 50px;
+  width: 100px;
+}
+
+#action-bar .add-contact  {
+  margin: 10px;
+  margin-left: 20%;
+}
+
+#search-bar {
+  float: right;
+  margin-top: 10px;
+  margin-right: 20%;
+}
+
+.contact {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+  padding: 10px;
+  border-color: grey;
+  border-style: solid;
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.contact p {
+  font-size: .85rem;
+}
+
+.hidden {
+  display: none;
+}
+
+form {
+  width: 80%;
+  align-self: center;
+}
+
+.input-error {
+  font-size: x-small;
+  color: red;
+}
+
+
