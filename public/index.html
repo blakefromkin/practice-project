@@ -39,20 +39,20 @@
       <fieldset>
         <div id="tags" name="tags">
           <p>Tags:</p>
-          <label class="tag" for="work">work</label>
           <input type="checkbox" id="work" name="work"/>
-          <label class="tag" for="friend">friend</label>
+          <label class="tag" for="work">work</label>
           <input type="checkbox" id="friend" name="friend"/>
-          <label class="tag" for="family">family</label>
+          <label class="tag" for="friend">friend</label>
           <input type="checkbox" id="family" name="family"/>
+          <label class="tag" for="family">family</label>
           {{#if additionalTags}}
           {{#each additionalTags}}
-          <label class="tag" for="{{tag}}">{{tag}}</label>
           <input type="checkbox" id="{{tag}}" name={{tag}}/>
+          <label class="tag" for="{{tag}}">{{tag}}</label>
           {{/each}}
           {{/if}}
-          <label class="tag" for="other">other</label>
           <input type="checkbox" id="other" name="other"/>
+          <label class="tag" for="other">other</label>
         </div>
           <label for="other">Enter new tag:</label>
           <input type="text" id="new-tag" name="new-tag" maxlength="20"/>

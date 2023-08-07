@@ -4,13 +4,15 @@ let formTemplate = Handlebars.compile($('#formTemplate').html());
 let tagTemplate = Handlebars.compile($('#tagSelectTemplate').html());
 Handlebars.registerPartial('contactTemplate', $('#contactTemplate').html());
 
-// Fetch contacts and tags before loading the DOM
-fetchHomepage();
 let addtlTags;
-additionalTags().then(val => addtlTags = val);
-populateTagsFilter();
-
 document.addEventListener("DOMContentLoaded", e => {
+  // Fetch and load contacts
+  fetchHomepage();
+  
+  // Fetch and populate tags
+  additionalTags().then(val => addtlTags = val);
+  populateTagsFilter();
+
   document.getElementById("contacts").addEventListener("click", async e => {
     e.preventDefault();
 
