@@ -17,7 +17,7 @@
       <p>{{email}}</p>
       {{#if tags}}
       <p><strong>Tags:</strong></p>
-      <p>{{tags}}</p>
+      <p class="contact-tags">{{tags}}</p>
       {{/if}}
       <button class="edit-button">Edit</button>
       <button class="delete-button">Delete</button>
@@ -39,14 +39,24 @@
       <fieldset>
         <div id="tags" name="tags">
           <p>Tags:</p>
-          <label class="tag" for="work">Work</label>
-          <input type="checkbox" id="work" name="work" {{workChecked}}/>
-          <label class="tag" for="friend">Friend</label>
-          <input type="checkbox" id="friend" name="friend" {{friendChecked}}/>
-          <label class="tag" for="family">Family</label>
-          <input type="checkbox" id="family" name="family" {{familyChecked}}/>
-          <label class="tag" for="other">Other</label>
-          <input type="checkbox" id="other" name="other" {{otherChecked}}/>
+          <label class="tag" for="work">work</label>
+          <input type="checkbox" id="work" name="work"/>
+          <label class="tag" for="friend">friend</label>
+          <input type="checkbox" id="friend" name="friend"/>
+          <label class="tag" for="family">family</label>
+          <input type="checkbox" id="family" name="family"/>
+          {{#if additionalTags}}
+          {{#each additionalTags}}
+          <label class="tag" for="{{tagId}}">{{tag}}</label>
+          <input type="checkbox" id="{{tagId}}" name={{tag}}/>
+          {{/each}}
+          {{/if}}
+          <label class="tag" for="other">other</label>
+          <input type="checkbox" id="other" name="other"/>
+        </div>
+          <label for="other">Enter new tag:</label>
+          <input type="text" id="new-tag" name="new-tag" maxlength="20"/>
+          <button id="tag-button">Add</button>
         </div>
       </fieldset>
       <input type="submit" value="Submit" id="submit"/> 
@@ -63,6 +73,11 @@
     <button class="add-contact">Add Contact</button>
     {{/if}}
   </script>
+  <script id="tagSelectTemplate" type="text/x-handlebars">
+    {{#each tags}}
+    <option value="{{tag}}">{{tag}}</option>
+    {{/each}}
+  </script>
   <script src="/javascripts/app.js"></script>
 </head>
 <body>
@@ -73,6 +88,9 @@
     <div id="action-bar" class="toggleable">
       <button class="add-contact">Add Contact</button>
       <input type="text" id="search-bar" placeholder="Search"/>
+      <select id="tag-select">
+        <option value="all">all</option>
+      </select>
     </div>
     <div id="contacts" class="toggleable"></div>
   </main>
