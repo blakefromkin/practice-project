@@ -10,7 +10,7 @@
     "full_name": "Pete Hanson",
     "phone_number": "1111111111",
     "email": "ph@gmail.com",
-    "tags": "instructor",
+    "tags": "friend,instructor",
     "id": 2
   },
   {
@@ -28,10 +28,10 @@
     "id": 4
   },
   {
-    "full_name": "Tony DeSanto",
-    "phone_number": "123",
-    "email": "td@gmail.com",
-    "tags": "work,family",
+    "full_name": "Chris Lee",
+    "phone_number": "7654328976",
+    "email": "clee@gmail.com",
+    "tags": "founder",
     "id": 5
   }
 ]

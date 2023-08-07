@@ -314,7 +314,7 @@ async function additionalTags() {
         let tags = contact.tags.split(",");
         tags.forEach(tag => {
           if (!defaultTags.includes(tag) && !addtlTags.includes(tag)) {
-            addtlTags.push({tag: tag, tagId: tag + 'Id'});
+            addtlTags.push({tag});
           }
         });
       })
