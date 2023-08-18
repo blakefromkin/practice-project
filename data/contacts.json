@@ -10,15 +10,8 @@
     "full_name": "Pete Hanson",
     "phone_number": "1111111111",
     "email": "ph@gmail.com",
-    "tags": "instructor",
+    "tags": "work,friend",
     "id": 2
-  },
-  {
-    "full_name": "Jonathan Smith",
-    "phone_number": "2165667800",
-    "email": "jsmithy@aol.com",
-    "tags": "other",
-    "id": 3
   },
   {
     "full_name": "Tony Soprano",
@@ -31,7 +24,14 @@
     "full_name": "Chris Lee",
     "phone_number": "7654328976",
     "email": "clee@gmail.com",
-    "tags": "founder",
+    "tags": "work",
     "id": 5
+  },
+  {
+    "full_name": "Brian McSwiggans",
+    "phone_number": "7326158239",
+    "email": "bmcswig@gmail.com",
+    "tags": "bartender,other",
+    "id": 6
   }
 ]
